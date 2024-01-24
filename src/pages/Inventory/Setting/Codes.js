@@ -1,6 +1,6 @@
 const title = "Inventory Settings";
 const dataRoute = "/accounts/Payment";
-const navPath =  "/accounts/payments";
+const navPath = "/accounts/payments";
 
 export const dataInfo = {
   formTitle: title,

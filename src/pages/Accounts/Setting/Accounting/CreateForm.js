@@ -540,7 +540,7 @@ const CreateForm = () => {
                 The invoices up to this date will not be taken into account as
                 accounting entries
               </StyledSubHeader>
-              <Form.Item name="invoiceSwitchThresholdDate">
+              <Form.Item name="invoiceswitchThresholdDate">
                 <DatePicker />
               </Form.Item>
             </StyledCol>

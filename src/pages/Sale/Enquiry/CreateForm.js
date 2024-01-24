@@ -90,7 +90,9 @@ const CreateForm = () => {
     values.current = to == En ? 0 : to === E ? 1 : to === Q && 2;
     values.estimationDate = to == E ? df : path == E ? df : "";
     values.quotationDate = to == Q ? df : path == Q ? df : "";
-    values.following = values.following.concat([user?._id]);
+    //changed from     values.following = values.following.concat([user?._id]);
+    //to this because when person to notify was not set it would be undefined
+    values.following = (values.following || []).concat([user?._id]);
     values.quotationBy == Q ? user?._id : null;
     values.estimationBy == E ? user?._id : null;
     values.isEstimation = path == E ? true : to == E ? true : false;

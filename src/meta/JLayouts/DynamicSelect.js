@@ -11,6 +11,7 @@ const DynamicSelect = ({
   mode = null,
   name,
   label,
+  onChange,
 }) => {
   const [{ apiData: items }, { setData: setItems }] = useGetData(
     endpoint ? `${path}/list?type=${endpoint}` : `${path}/list`,
@@ -35,6 +36,7 @@ const DynamicSelect = ({
         bordered={true}
         mode={mode}
         placeholder={`Select a ${label}`}
+        onChange={onChange}
         dropdownRender={(menu) => (
           <>
             {menu}

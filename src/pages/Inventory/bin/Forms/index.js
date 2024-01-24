@@ -512,7 +512,6 @@ const FormMain = () => {
       </FormLayout>
     </>
   );
-
 };
 
 export default FormMain;

@@ -4,25 +4,22 @@ import {
 } from "../services/auth/JWTAuthProvider";
 
 const getUserFromJwtAuth = (user) => {
-  console.log("User in getUserFromJwtAuth", user);
   if (user) {
-    const { _id, name, designation, process, currLocation, power } = user;
+    const { ...rest } = user;
 
     return {
-      id: _id || null,
-      uid: _id || null,
-      displayName: name || null,
-      designation: designation?.title || null,
-      process: process?.title || null,
-      processId: process?._id || null,
-      powers: power?.powers || null,
+      ...rest,
+      id: user?._id,
+      uid: user?._id,
+      displayName: user?.name,
+      designation: user?.designation?.title,
+      process: user?.process?.title,
+      processId: user?.process?._id,
+      powers: user?.power?.powers,
       power:
-        currLocation?.permissions ??
-        power?.powers[0]?.permissions ??
-        "defaultUserRole",
+        user?.currLocation?.permissions || user?.power?.powers[0]?.permissions,
     };
   }
-  console.log("user in getUserfromJwtAuth before returning", user);
   return user;
 };
 

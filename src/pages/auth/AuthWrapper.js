@@ -60,12 +60,20 @@ const AuthWrapper = ({ children }) => {
             {/* <StyledLowerLayer /> */}
           </StyledAuthMainContent>
           <StyledAuthWellAction>
-            <StyledAuthWelContent className="flex  flex-col items-center justify-center text-center">
+            <StyledAuthWelContent className="flex flex-col items-center justify-center text-center">
               <AppLogo />
               <p className="">
                 Integrated Business & Compliance <b>Apps</b>
               </p>
               <small className="mt-2">{slogan}</small>
+              <h className="mt-8 text-lg font-semibold">
+                VieTech (Private) Limited
+              </h>
+              <a>+92 321 0404042</a>
+              <div className="flex space-x-2">
+                <a href="https://www.vietech.pro/">www.vietech.pro</a>
+                <a href="https://www.vapps.click/">www.vapps.click</a>
+              </div>
             </StyledAuthWelContent>
           </StyledAuthWellAction>
         </StyledAuthCard>

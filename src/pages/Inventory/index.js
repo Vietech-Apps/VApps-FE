@@ -1,6 +1,7 @@
 import React from "react";
 import { RoutePermittedRole } from "shared/constants/AppEnums";
 
+// Lazily import React components for dynamic loading
 const Product = React.lazy(() => import("./Product"));
 const ImportProducts = React.lazy(() => import("./Import"));
 const Create = React.lazy(() => import("./Product/Forms"));
@@ -17,6 +18,19 @@ const ReceiptForm = React.lazy(() => import("./Receipts/ReceiptForm"));
 // const PCatForm = React.lazy(() => import("./Category/ReceiptForm"));
 // const PCategory = React.lazy(() => import("./Category"));
 //const Alerts = React.lazy(() => import("./Alerts"));
+
+/**
+ * Configuration for inventory module routes.
+ * @typedef {Object} InvConfig
+ * @property {RoutePermittedRole} permittedRole - The permitted role for accessing the route.
+ * @property {string|string[]} path - The path or array of paths for the route.
+ * @property {React.Component} element - The React component to be rendered for the route.
+ */
+
+/**
+ * Array of inventory module route configurations.
+ * @type {InvConfig[]}
+ */
 export const invConfigs = [
   {
     permittedRole: RoutePermittedRole.user,

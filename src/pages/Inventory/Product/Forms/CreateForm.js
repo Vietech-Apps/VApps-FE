@@ -485,7 +485,8 @@ const CreateProduct = ({ form, selectedData, setSelectedData, modal }) => {
             </Form.Item>
           </Col>
           <Col md={24}>
-            <InventoryData form={form} data={selectedData} />
+            {/* only rendering inventory data if selectedData is not undefined */}
+            {selectedData && <InventoryData form={form} data={selectedData} />}
           </Col>
         </AppRowContainer>
       ),
